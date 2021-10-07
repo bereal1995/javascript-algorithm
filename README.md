@@ -13,3 +13,6 @@
 - 재귀함수, 완전탐색(깊이우선탐색)
 - 그래프와 탐색(DFS, BFS)
 - 동적계획법
+
+## 참고자료
+- [문제출처](https://www.inflearn.com/course/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98-%EB%AC%B8%EC%A0%9C%ED%92%80%EC%9D%B4/dashboard)
