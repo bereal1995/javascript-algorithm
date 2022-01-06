@@ -3,22 +3,11 @@
  * @return {void} Do not return anything, modify arr in-place instead.
  */
 var duplicateZeros = function(arr) {
-    let zeroCount = 0;
-    let n = arr.length;
-    
-    for (let x of arr) {
-        if (x === 0) zeroCount++;
-    }
-    
-    for (let i = n-1; i >= 0; i--) {
-        let j = i + zeroCount;
-
-        if (arr[i] == 0) {
-            if (j < n) arr[j] = 0;
-            zeroCount--;
-            j--;
+    for (let i=0; i<arr.length; i++) {
+        if (arr[i] === 0) {
+            arr.splice(i + 1, 0, 0);
+            arr.pop();
+            i++;
         }
-
-        if (j < n) arr[j] = arr[i];
     }
 };
