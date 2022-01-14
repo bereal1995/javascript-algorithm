@@ -9,20 +9,23 @@ var validMountainArray = function(arr) {
     
     if (n < 3) return false
     
-    for (let x of arr) {
-        if (arr[start] < arr[start + 1]) {
+    for(let i=0; i<n; i++) {
+        if (arr[i] < arr[i + 1]) {
             start++;
-        }
-        if (arr[end] < arr[end - 1]) {
-            end--;
+        } else {
+            break;
         }
     }
     
-    if (start === end) {
-        if (start === 0) return false;
-        if (start === (n - 1)) return false;
-        
-        return true;
+    for(let j=n-1; j>0; j--) {
+        if (arr[j] < arr[j - 1]) {
+            end--;
+        } else {
+            break;
+        }
     }
-    return false;
+    
+    console.log('start', start)
+    console.log('end', end)
+    return start > 0 && start < n - 1 && start === end;
 };
