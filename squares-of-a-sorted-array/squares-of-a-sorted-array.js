@@ -3,12 +3,7 @@
  * @return {number[]}
  */
 var sortedSquares = function(nums) {
-    let answser = [];
-    
-    for(let i=0; i<nums.length; i++) {
-        const num = nums[i] ** 2;
-        answser.push(num)
-    }
+    let answser = nums.map((num) => num*num);
     
     return answser.sort((a, b) => a - b)
 };
