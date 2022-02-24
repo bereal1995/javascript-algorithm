@@ -4,14 +4,11 @@
  * @return {string}
  */
 var convert = function(s, numRows) {
-    let answer = '';
     let count = 0;
     let isUp = true;
     let arrs = Array.from({length: numRows}, () => [])
     
-    if (numRows === 1) {
-        return s
-    }
+    if (numRows === 1) return s
     
     for(const x of s) {
         arrs[count].push(x);
@@ -30,7 +27,5 @@ var convert = function(s, numRows) {
         }
     }
     
-    answer = arrs.flat().join('')
-    
-    return answer
+    return arrs.flat().join('')
 };
