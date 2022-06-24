@@ -13,5 +13,5 @@ var areOccurrencesEqual = function(s) {
         }
     }
     
-    return new Set([...strList.values()]).size > 1 ? false : true
+    return new Set(strList.values()).size === 1
 };
