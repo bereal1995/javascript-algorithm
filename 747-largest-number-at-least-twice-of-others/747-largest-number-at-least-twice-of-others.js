@@ -8,7 +8,7 @@ var dominantIndex = function(nums) {
     const targetLength = nums.filter(num => max >= num * 2).length;
     
     if (nums.length === 1) return 0
-    if (targetLength === clearLength) return nums.findIndex(num => num === max)
+    if (targetLength === clearLength) return nums.indexOf(max)
     
     return -1
 };
