@@ -5,7 +5,6 @@
  */
 var minSubArrayLen = function(target, nums) {
     let leftIdx = 0;
-    let rightIdx = 0;
     let sum = 0;
     let result = Number.MAX_SAFE_INTEGER;
     
