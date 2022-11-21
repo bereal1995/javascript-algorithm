@@ -25,21 +25,21 @@ var findUnsortedSubarray = function (nums) {
       max = Math.max(max, nums[i]);
     }
   }
-    
-    let l = 0;
-    let r = 0;
-    
-    for(let i=0; i<nums.length; i++) {
-        l = i;
-        if (min < nums[i]) break;
-    }
-    
-    for(let i=nums.length - 1; i>=0; i--) {
-        r = i;
-        if (max > nums[i]) break;
-    }
-    
-    if (r === 0) return 0
-    
-    return r - l + 1;
+
+  let l = 0;
+  let r = 0;
+
+  for (let i = 0; i < nums.length; i++) {
+    l = i;
+    if (min < nums[i]) break;
+  }
+
+  for (let i = nums.length - 1; i >= 0; i--) {
+    r = i;
+    if (max > nums[i]) break;
+  }
+
+  if (r === 0) return 0;
+
+  return r - l + 1;
 };
