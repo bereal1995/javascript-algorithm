@@ -3,66 +3,32 @@
  * @return {number[][]}
  */
 var threeSum = function(nums) {
-    const results = [];
-
-  if (nums.length < 3) return results;
-
-  nums = nums.sort((a, b) => a - b);
-
-  let target = 0;
-
-  for (let i = 0; i < nums.length - 2; i++) {
-    if (nums[i] > target) break;
-
-    if (i > 0 && nums[i] === nums[i - 1]) continue;
-
-    let j = i + 1;
-
-    let k = nums.length - 1;
-
-    while (j < k) {
-      let sum = nums[i] + nums[j] + nums[k];
-      if (sum === target) {
-        results.push([nums[i], nums[j], nums[k]]);
-        while (nums[j] === nums[j + 1]) j++;
-        while (nums[k] === nums[k - 1]) k--;
-        j++;
-        k--;
-      } else if (sum < target) {
-        j++;
-      } else {
-        k--;
-      }
-    }
-  }
-
-  return results;
-//     const result = [];
-//     if (nums.length < 3) return result;
-//     nums.sort((a, b) => a - b);
+    const result = [];
+    if (nums.length < 3) return result;
+    nums.sort((a, b) => a - b);
     
-//     for(let i=0; i<nums.length - 2; i++) {
-//         if (nums[i] > 0) break;
-//         if (i > 0 && nums[i] === nums[i - 1]) continue;
+    for(let i=0; i<nums.length - 2; i++) {
+        if (nums[i] > 0) break;
+        if (i > 0 && nums[i] === nums[i - 1]) continue;
 
-//         let left = i + 1;
-//         let right = nums.length - 1;
+        let left = i + 1;
+        let right = nums.length - 1;
         
-//         while(left < right) {       
-//             const sum = nums[i] + nums[left] + nums[right];
-//             if (sum === 0) {
-//                 result.push([nums[i], nums[left], nums[right]]);
-//                 while(nums[left] === nums[left + 1]) left++;
-//                 while(nums[right] === nums[right - 1]) right--;
-//                 left++;
-//                 right--;
-//             } else if (sum > nums[i]) {
-//                 right--;
-//             } else {
-//                 left++;
-//             }
-//         }
-//     }
+        while(left < right) {       
+            const sum = nums[i] + nums[left] + nums[right];
+            if (sum === 0) {
+                result.push([nums[i], nums[left], nums[right]]);
+                while(nums[left] === nums[left + 1]) left++;
+                while(nums[right] === nums[right - 1]) right--;
+                left++;
+                right--;
+            } else if (sum > 0) {
+                right--;
+            } else {
+                left++;
+            }
+        }
+    }
     
-//     return result;
+    return result;
 };
